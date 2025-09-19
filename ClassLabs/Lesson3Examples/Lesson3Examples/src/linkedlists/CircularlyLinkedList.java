@@ -191,6 +191,7 @@ public class CircularlyLinkedList<E> {
 	  circularList.addLast("MSP");
 	  circularList.addLast("ATL");
 	  circularList.addLast("BOS");
+      System.out.println("Hello World");
 	  //
 	  System.out.println(circularList);
 	  circularList.removeFirst();
