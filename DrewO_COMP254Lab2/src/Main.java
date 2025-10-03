@@ -49,9 +49,12 @@ public class Main {
         startTime = System.currentTimeMillis();
         Uniqueness.unique1(array);
         endTime = System.currentTimeMillis();
-        endTime = System.currentTimeMillis();
         elapsed = endTime-startTime;
+        if (elapsed <= 60000000000L); {
+            runUnique1(n+1, s);
+        }
         System.out.println("Elapsed time of "+s+": " + elapsed + "ms in Unique1");
+
     }
     public static void runUnique2(int n, String s) {
         long startTime;
@@ -61,15 +64,14 @@ public class Main {
         startTime = System.currentTimeMillis();
         Uniqueness.unique2(array);
         endTime = System.currentTimeMillis();
-        endTime = System.currentTimeMillis();
         elapsed = endTime-startTime;
-        System.out.println("Elapsed time of "+s+": " + elapsed + "ms in Uniqu2");
+        System.out.println("Elapsed time of "+s+": " + elapsed + "ms in Unique2");
     }
     public static void main(String[] args) {
         //Exercise2 - This has shown that Average2 has executed efficiently compared to Average1 since Average1 is O(n^2)
         int n_1 = 1000;
         int n_2 = 10000;
-        int n_3 = 100000;
+        int n_3 = 10000;
 
         runPrefixAverage1(n_1, "n1");
         runPrefixAverage1(n_2, "n2");
@@ -80,11 +82,9 @@ public class Main {
         runPrefixAverage2(n_3, "n3");
 
 
-         n_1 = 10000000;
+         n_1 = 1000000000;
         //Exercise3
-        runUnique1(n_1, "n1");
-        runUnique1(n_3, "n3");
+        runUnique1(1, "n1");
         runUnique2(n_1, "n1");
-        runUnique2(n_3, "n3");
     }
 }
