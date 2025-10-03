@@ -41,31 +41,47 @@ public class Main {
         elapsed = endTime-startTime;
         System.out.println("Elapsed time of "+s+": " + elapsed + "ms in Average2");
     }
-    public static void runUnique1(int n, String s) {
-        long startTime;
-        long endTime;
-        long elapsed;
-        int[] array = intRandomArray(n);
-        startTime = System.currentTimeMillis();
-        Uniqueness.unique1(array);
-        endTime = System.currentTimeMillis();
-        elapsed = endTime-startTime;
-        if (elapsed <= 60000000000L); {
-            runUnique1(n+1, s);
-        }
-        System.out.println("Elapsed time of "+s+": " + elapsed + "ms in Unique1");
+    public static void runUnique1() {
+        int low = 1;
+        int high = 1000000;
+        int maxN = 0;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            int[] array = intRandomArray(mid);
 
+            long startTime = System.currentTimeMillis();
+            Uniqueness.unique1(array);
+            long elapsed = System.currentTimeMillis() - startTime;
+
+            if (elapsed <= 60000) {
+                maxN = mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        System.out.println("Largest n for Unique1 under 1 minute: " + maxN);
     }
-    public static void runUnique2(int n, String s) {
-        long startTime;
-        long endTime;
-        long elapsed;
-        int[] array = intRandomArray(n);
-        startTime = System.currentTimeMillis();
-        Uniqueness.unique2(array);
-        endTime = System.currentTimeMillis();
-        elapsed = endTime-startTime;
-        System.out.println("Elapsed time of "+s+": " + elapsed + "ms in Unique2");
+    public static void runUnique2() {
+        int low = 1;
+        int high = 1000000;
+        int maxN = 0;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            int[] array = intRandomArray(mid);
+
+            long startTime = System.currentTimeMillis();
+            Uniqueness.unique2(array);
+            long elapsed = System.currentTimeMillis() - startTime;
+
+            if (elapsed <= 60000) {
+                maxN = mid;
+                low = mid + 1;
+            } else {
+                high = mid - 1;
+            }
+        }
+        System.out.println("Largest n for Unique2 under 1 minute: " + maxN);
     }
     public static void main(String[] args) {
         //Exercise2 - This has shown that Average2 has executed efficiently compared to Average1 since Average1 is O(n^2)
@@ -84,7 +100,9 @@ public class Main {
 
          n_1 = 1000000000;
         //Exercise3
-        runUnique1(1, "n1");
-        runUnique2(n_1, "n1");
+
+        runUnique1();
+        runUnique2();
+        //runUnique2(n_1, "n1");
     }
 }
