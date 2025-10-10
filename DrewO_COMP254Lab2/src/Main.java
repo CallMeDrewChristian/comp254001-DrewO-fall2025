@@ -98,11 +98,11 @@ public class Main {
         runPrefixAverage2(n_3, "n3");
 
 
-         n_1 = 1000000000;
+         //n_1 = 1000000000;
         //Exercise3
 
-        runUnique1();
-        runUnique2();
+       // runUnique1();
+        //runUnique2();
         //runUnique2(n_1, "n1");
     }
 }
