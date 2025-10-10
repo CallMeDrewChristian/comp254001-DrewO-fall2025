@@ -1,7 +1,5 @@
+//Drew Oro 301337741 F25 COMP254-001
 import java.util.Scanner;
-
-
-
 public class Exercise2 {
 
     public static boolean checkPalindrome(String s) {
@@ -13,8 +11,6 @@ public class Exercise2 {
         }
         return checkPalindrome(s.substring(1, s.length() - 1));
     }
-
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter your word: ");

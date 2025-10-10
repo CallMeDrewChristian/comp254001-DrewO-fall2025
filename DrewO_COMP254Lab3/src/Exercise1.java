@@ -1,3 +1,4 @@
+//Drew Oro 301337741 F25 COMP254-001
 public class Exercise1 {
     public static int multiplyResult(int m, int n) {
         if (n == 0) {
