@@ -80,4 +80,8 @@ public class LinkedQueue<E> implements Queue<E> {
   public String toString() {
     return list.toString();
   }
+
+  public void concatenate(LinkedQueue<E> Q2) {
+    list.concatenate(Q2.list);
+  }
 }

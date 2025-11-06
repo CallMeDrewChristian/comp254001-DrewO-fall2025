@@ -1,10 +1,8 @@
 import stacks.LinkedStack;
 import stacks.Stack;
-
+//Drew Oro 301337741
 public class Q2 {
     public static <E> void transfer(Stack<E> stackA, Stack<E> stackB) {
-        // Simply pop from S and push to T
-        // This automatically achieves the desired order
         while (!stackA.isEmpty()) {
             stackB.push(stackA.pop());
         }
