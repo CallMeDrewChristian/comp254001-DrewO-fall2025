@@ -325,6 +325,22 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
     }
     return null;
   }
+
+  public int postorderHeight(Position<E> p) {
+    Node<E> node = validate(p);
+    int height = 0;
+    int leftHeight = -1;
+    int rightHeight = -1;
+    //Recursively go to the left or right child and repeat until it finds the leaf. Once finds the leaf, it adds the height depending how far the children goes in left or right.
+    if (left(node) != null) {
+      leftHeight = postorderHeight(left(node));
+    }
+    if (right(node) != null) {
+      rightHeight = postorderHeight(right(node));
+    }
+    height = 1 + Math.max(leftHeight, rightHeight);
+    return height;
+  }
   
   
 
@@ -347,7 +363,6 @@ public class LinkedBinaryTree<E> extends AbstractBinaryTree<E> {
       parenthesize(lbt, lbt.parent(ig));
     System.out.println("");
 	  System.out.println("The next node (ig) in a preorder transversal is: " + lbt.preorderNext(ig).getElement() );
-  
   }
   /** Prints parenthesized representation of subtree of T rooted at p. */
   public static <E> void parenthesize(Tree<E> T, Position<E> p) {
