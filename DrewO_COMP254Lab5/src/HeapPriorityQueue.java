@@ -76,12 +76,11 @@ public class HeapPriorityQueue<K,V> extends AbstractPriorityQueue<K,V> {
 
   /** Moves the entry at index j higher, if necessary, to restore the heap property. */
   protected void upheap(int j) {
-    while (j > 0) {            // continue until reaching root (or break statement)
-      int p = parent(j);
-      if (compare(heap.get(j), heap.get(p)) >= 0) break; // heap property verified
-      swap(j, p);
-      j = p;                                // continue from the parent's location
-    }
+    if (j == 0) return;
+    int i_parent = parent(j);
+    if (compare(heap.get(j), heap.get(i_parent)) >= 0) return;
+    swap(j, i_parent);
+    upheap(i_parent);
   }
 
   /** Moves the entry at index j lower, if necessary, to restore the heap property. */
