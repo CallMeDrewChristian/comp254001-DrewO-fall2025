@@ -4,7 +4,7 @@ public class Q3 {
         pq.insert(5, "Five");
         pq.insert(3, "Three");
         pq.insert(8, "Eight");
-        pq.insert(1, "One");
+        pq.insert(4, "Four");
         System.out.println("Min element: " + pq.min().getValue());
     }
 }

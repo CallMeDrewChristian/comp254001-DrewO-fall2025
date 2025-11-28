@@ -15,7 +15,7 @@ public class Q1 {
         System.out.println("John is in: " + list.indexOf(posD));
         PositionalList<String> List_Test = new LinkedPositionalList<String>();
         System.out.println(List_Test.indexOf(posA));  //Null or -1
-        list.addBefore(posB, "Chris");
+        list.addAfter(posB, "Chris");
         System.out.println("Isaac has now moved to: " + list.indexOf(posB));
         System.out.println("Sohaib has now moved to: " + list.indexOf(posC));
     }
